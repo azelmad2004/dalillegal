@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="fr" dir="ltr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Connexion Sécurisée — Dalil Legal Maroc</title>
+<link rel="icon" href="assets/favicon.png">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<header></header>
+
+<main>
+  <div class="page-container" style="max-width:460px;margin-top:2.5rem;margin-bottom:3rem">
+    <div class="luxury-card" style="box-shadow:var(--shadow-lg);padding:2.5rem">
+      <div style="text-align:center;margin-bottom:1.8rem">
+        <div class="brand-icon" style="margin:0 auto 1rem;width:48px;height:48px">
+          <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 3v18"/><path d="M5 8h14"/><path d="M5 8l-3 7h6l-3-7z"/><path d="M19 8l-3 7h6l-3-7z"/><path d="M3 21h18"/></svg>
+        </div>
+        <h2 data-i18n="loginTitle">Connexion Sécurisée</h2>
+        <p style="font-size:.9rem;color:var(--text-muted);margin-top:.4rem" data-i18n="loginSubtitle">Accédez à vos consultations et dossiers juridiques sécurisés</p>
+      </div>
+
+      <form id="loginForm">
+        <div class="form-group">
+          <label data-i18n="loginEmailLabel">Adresse E-mail</label>
+          <input type="email" id="loginEmail" class="form-input" placeholder="votre.email@domaine.ma" required>
+        </div>
+        <div class="form-group">
+          <label data-i18n="loginPasswordLabel">Mot de Passe</label>
+          <input type="password" id="loginPw" class="form-input" placeholder="••••••••" required>
+        </div>
+        <button class="btn" style="width:100%;margin-top:1rem" id="loginSubmit">
+          <span data-i18n="loginSubmitBtn">Se Connecter</span>
+        </button>
+        <div id="loginErr" style="color:#DC2626;font-size:.88rem;margin-top:.8rem;text-align:center"></div>
+      </form>
+
+      <div style="margin:1.5rem 0;display:flex;align-items:center;gap:.8rem">
+        <div style="flex:1;height:1px;background:var(--line)"></div>
+        <span style="font-size:.8rem;color:var(--text-light);text-transform:uppercase">OU</span>
+        <div style="flex:1;height:1px;background:var(--line)"></div>
+      </div>
+
+      <!-- Quick 1-Click Demo Button to Immediately Launch Chatbot -->
+      <button class="btn ghost" style="width:100%;font-size:.86rem;border-color:var(--gold)" onclick="loginAsDemo()">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"/></svg>
+        <span data-i18n="loginDemoBtn">Accès Démo Immédiat (1 Clic)</span>
+      </button>
+
+      <div style="text-align:center;margin-top:1.5rem;font-size:.9rem;color:var(--text-muted)">
+        <span data-i18n="loginNoAccount">Pas encore de compte ?</span>
+        <a href="register.html" style="color:var(--gold-d);font-weight:700" data-i18n="loginRegisterLink">Créer un compte</a>
+      </div>
+    </div>
+  </div>
+</main>
+
+<footer></footer>
+
+<script src="shared.js"></script>
+<script src="3d-effects.js"></script>
+<script>
+// If already logged in, redirect directly to chat
+if (DalilApp.getUser()) {
+  location.href = "chat.html";
+}
+
+DalilApp.initHeader("");
+DalilApp.initFooter();
+
+function loginAsDemo() {
+  const demoUser = {
+    id: 999,
+    name: "Utilisateur Démo",
+    username: "demo_dalil",
+    email: "demo@dalillegal.ma",
+    role: "pro"
+  };
+  localStorage.setItem("dalil_token", "demo_token_" + Date.now());
+  localStorage.setItem("dalil_user", JSON.stringify(demoUser));
+  location.href = "chat.html";
+}
+
+document.getElementById("loginForm").onsubmit = async e => {
+  e.preventDefault();
+  const errDiv = document.getElementById("loginErr");
+  errDiv.textContent = "";
+  const email = document.getElementById("loginEmail").value.trim();
+  const password = document.getElementById("loginPw").value;
+
+  try {
+    let resp = await fetch("/api/login", {
+      method: "POST",
+      headers: {"Content-Type": "application/json"},
+      body: JSON.stringify({email, password})
+    });
+    if(!resp.ok && resp.status === 404){
+      resp = await fetch("/auth/login", {
+        method: "POST",
+        headers: {"Content-Type": "application/json"},
+        body: JSON.stringify({email, password})
+      });
+    }
+    const data = await resp.json();
+    if(!resp.ok) throw (data.detail || data.error || "Email ou mot de passe incorrect");
+    localStorage.setItem("dalil_token", data.token);
+    localStorage.setItem("dalil_user", JSON.stringify(data.user));
+    location.href = "chat.html";
+  } catch(err) {
+    errDiv.textContent = typeof err === "string" ? err : "Identifiants invalides.";
+  }
+};
+</script>
+</body>
+</html>

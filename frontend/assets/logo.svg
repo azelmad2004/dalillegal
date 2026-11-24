@@ -1,0 +1,76 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" width="512" height="512">
+  <defs>
+    <linearGradient id="goldMain" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%"   stop-color="#F2DFB0"/>
+      <stop offset="30%"  stop-color="#C8A45C"/>
+      <stop offset="70%"  stop-color="#8A6A2A"/>
+      <stop offset="100%" stop-color="#C8A45C"/>
+    </linearGradient>
+    <linearGradient id="goldShine" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%"   stop-color="#FFF3CE"/>
+      <stop offset="40%"  stop-color="#C8A45C"/>
+      <stop offset="100%" stop-color="#8A6A2A"/>
+    </linearGradient>
+    <linearGradient id="goldPan" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%"   stop-color="#F2DFB0"/>
+      <stop offset="50%"  stop-color="#C8A45C"/>
+      <stop offset="100%" stop-color="#8A6A2A"/>
+    </linearGradient>
+    <linearGradient id="goldPole" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%"   stop-color="#8A6A2A"/>
+      <stop offset="30%"  stop-color="#F2DFB0"/>
+      <stop offset="70%"  stop-color="#C8A45C"/>
+      <stop offset="100%" stop-color="#8A6A2A"/>
+    </linearGradient>
+    <linearGradient id="goldTopKnob" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%"   stop-color="#FFF3CE"/>
+      <stop offset="50%"  stop-color="#C8A45C"/>
+      <stop offset="100%" stop-color="#8A6A2A"/>
+    </linearGradient>
+    <radialGradient id="panSheen" cx="35%" cy="30%" r="60%">
+      <stop offset="0%"   stop-color="#FFF3CE" stop-opacity="0.7"/>
+      <stop offset="100%" stop-color="#8A6A2A" stop-opacity="0"/>
+    </radialGradient>
+    <filter id="shadow" x="-20%" y="-20%" width="140%" height="140%">
+      <feDropShadow dx="0" dy="5" stdDeviation="6" flood-color="#C8A45C" flood-opacity="0.35"/>
+    </filter>
+  </defs>
+
+  <!-- Top knob pivot ring -->
+  <circle cx="256" cy="88" r="22" fill="url(#goldTopKnob)" filter="url(#shadow)"/>
+  <circle cx="256" cy="88" r="22" fill="none" stroke="#FFF3CE" stroke-width="2" opacity="0.6"/>
+  <circle cx="249" cy="82" r="6" fill="#FFF3CE" opacity="0.7"/>
+
+  <!-- Central pole -->
+  <rect x="248" y="108" width="16" height="260" rx="4" fill="url(#goldPole)" filter="url(#shadow)"/>
+  <rect x="250" y="108" width="4" height="260" rx="2" fill="#FFF3CE" opacity="0.4"/>
+
+  <!-- Central beam horizontal balance bar -->
+  <path d="M72 144 C120 136, 190 132, 256 132 C322 132, 392 136, 440 144 C446 145, 448 150, 445 154 C442 158, 436 158, 430 157 C386 150, 320 146, 256 146 C192 146, 126 150, 82 157 C76 158, 70 158, 67 154 C64 150, 66 145, 72 144 Z" fill="url(#goldMain)" filter="url(#shadow)"/>
+  
+  <!-- Left chain lines -->
+  <line x1="84" y1="154" x2="52" y2="280" stroke="url(#goldShine)" stroke-width="3" opacity="0.85"/>
+  <line x1="84" y1="154" x2="116" y2="280" stroke="url(#goldShine)" stroke-width="3" opacity="0.85"/>
+  <line x1="84" y1="154" x2="84" y2="280" stroke="url(#goldShine)" stroke-width="2" opacity="0.6"/>
+
+  <!-- Left pan -->
+  <path d="M40 280 C40 316, 128 316, 128 280 Z" fill="url(#goldPan)" filter="url(#shadow)"/>
+  <ellipse cx="84" cy="280" rx="44" ry="7" fill="url(#goldTopKnob)"/>
+  <ellipse cx="84" cy="280" rx="44" ry="7" fill="url(#panSheen)"/>
+
+  <!-- Right chain lines -->
+  <line x1="428" y1="154" x2="396" y2="280" stroke="url(#goldShine)" stroke-width="3" opacity="0.85"/>
+  <line x1="428" y1="154" x2="460" y2="280" stroke="url(#goldShine)" stroke-width="3" opacity="0.85"/>
+  <line x1="428" y1="154" x2="428" y2="280" stroke="url(#goldShine)" stroke-width="2" opacity="0.6"/>
+
+  <!-- Right pan -->
+  <path d="M384 280 C384 316, 472 316, 472 280 Z" fill="url(#goldPan)" filter="url(#shadow)"/>
+  <ellipse cx="428" cy="280" rx="44" ry="7" fill="url(#goldTopKnob)"/>
+  <ellipse cx="428" cy="280" rx="44" ry="7" fill="url(#panSheen)"/>
+
+  <!-- Base stand tiered pedestal -->
+  <path d="M196 364 L316 364 L336 412 L176 412 Z" fill="url(#goldMain)" filter="url(#shadow)"/>
+  <rect x="156" y="412" width="200" height="24" rx="6" fill="url(#goldTopKnob)" filter="url(#shadow)"/>
+  <rect x="156" y="412" width="200" height="4" fill="#FFF3CE" opacity="0.5"/>
+</svg>
+

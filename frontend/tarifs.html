@@ -1,0 +1,345 @@
+<!DOCTYPE html>
+<html lang="fr" dir="ltr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Tarifs & Formules d'Abonnement — Dalil Legal Maroc</title>
+<link rel="icon" href="assets/favicon.png">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<header></header>
+
+<main>
+  <div class="page-container">
+    <div style="margin-bottom:2rem">
+      <h1 data-i18n="pricingTag" style="font-size:clamp(1.8rem, 3.5vw, 2.8rem);margin-bottom:.5rem">Tarifs & Formules d'Abonnement</h1>
+      <p data-i18n="pricingSub" style="color:var(--text-muted);font-size:1.05rem">Des formules claires et transparentes adaptées aux citoyens, juristes et entreprises au Maroc.</p>
+    </div>
+
+    <!-- Trial Banner (like in screenshot) -->
+    <div class="pricing-banner">
+      <span class="pricing-banner-badge">ESSAI</span>
+      <span data-i18n="pricingTrialBanner">15 jours gratuits - Tout, avec un quota limité</span>
+    </div>
+
+    <!-- 4 Pricing Columns exactly like screenshot -->
+    <div class="pricing-grid-4">
+      <!-- 1. Bidaya (بداية) -->
+      <div class="pricing-card" id="card-bidaya">
+        <div>
+          <div class="pricing-icon">
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M4.5 16.5c-1.5 1.26-2 5-2 5s3.74-.5 5-2c.71-.84.7-2.13-.09-2.91a2.18 2.18 0 0 0-2.91-.09z"/>
+              <path d="M12 15l-3-3a22 22 0 0 1 2-3.95A12.88 12.88 0 0 1 22 2c0 2.72-.78 7.5-6 11a22.35 22.35 0 0 1-4 2z"/>
+              <path d="M9 12H4s.55-3.03 2-4c1.62-1.08 5 0 5 0"/>
+              <path d="M12 15v5s3.03-.55 4-2c1.08-1.62 0-5 0-5"/>
+            </svg>
+          </div>
+          <div class="pricing-title" data-i18n="plan1Title">Bidaya (بداية)</div>
+          <div class="pricing-price">
+            <span data-i18n="plan1Price">19</span> <span data-i18n="plan1Unit">DH / mois</span>
+          </div>
+          <div class="pricing-desc" data-i18n="plan1Desc">Chat, article de loi, étapes, 2 calculs</div>
+        </div>
+        <div>
+          <button class="btn ghost btn-sm" style="width:100%" onclick="selectPlanAndScroll('Bidaya (بداية)', 19)">
+            <span data-i18n="btnChoosePlan">Choisir cette formule</span>
+          </button>
+          <div class="pricing-margin" data-i18n="plan1Margin">Idéal pour débuter · Sans engagement</div>
+        </div>
+      </div>
+
+      <!-- 2. Hqi (حقي) -->
+      <div class="pricing-card" id="card-hqi" style="border:1.5px solid var(--gold);box-shadow:var(--shadow-md)">
+        <div>
+          <div class="pricing-icon" style="background:var(--gold);color:#fff">
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M12 3v18"/><path d="M5 8h14"/><path d="M5 8l-3 7h6l-3-7z"/><path d="M19 8l-3 7h6l-3-7z"/><path d="M3 21h18"/>
+            </svg>
+          </div>
+          <div class="pricing-title" data-i18n="plan2Title">Hqi (حقي)</div>
+          <div class="pricing-price">
+            <span data-i18n="plan2Price">49</span> <span data-i18n="plan2Unit">DH / mois</span>
+          </div>
+          <div class="pricing-desc" data-i18n="plan2Desc">Calculs illimités, 3 documents, rappels de délais</div>
+        </div>
+        <div>
+          <button class="btn btn-sm" style="width:100%" onclick="selectPlanAndScroll('Hqi (حقي)', 49)">
+            <span data-i18n="btnChoosePlan">Choisir cette formule</span>
+          </button>
+          <div class="pricing-margin" data-i18n="plan2Margin">La formule la plus populaire</div>
+        </div>
+      </div>
+
+      <!-- 3. Dalil Plus (دليل+) -->
+      <div class="pricing-card" id="card-plus">
+        <div>
+          <div class="pricing-icon">
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/>
+            </svg>
+          </div>
+          <div class="pricing-title" data-i18n="plan3Title">Dalil Plus (دليل+)</div>
+          <div class="pricing-price">
+            <span data-i18n="plan3Price">89</span> <span data-i18n="plan3Unit">DH / mois</span>
+          </div>
+          <div class="pricing-desc" data-i18n="plan3Desc">Tout, 10 documents, vocal, plusieurs dossiers</div>
+        </div>
+        <div>
+          <button class="btn ghost btn-sm" style="width:100%" onclick="selectPlanAndScroll('Dalil Plus (دليل+)', 89)">
+            <span data-i18n="btnChoosePlan">Choisir cette formule</span>
+          </button>
+          <div class="pricing-margin" data-i18n="plan3Margin">Recommandé pour professionnels &amp; entreprises</div>
+        </div>
+      </div>
+
+      <!-- 4. À l'acte -->
+      <div class="pricing-card" id="card-acte">
+        <div>
+          <div class="pricing-icon">
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/>
+              <polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/>
+            </svg>
+          </div>
+          <div class="pricing-title" data-i18n="plan4Title">À l'acte</div>
+          <div class="pricing-price">
+            <span data-i18n="plan4Price">19</span> <span data-i18n="plan4Unit" style="font-size:.8rem">DH le document</span>
+          </div>
+          <div class="pricing-desc" data-i18n="plan4Desc">39 DH le dossier ponctuel (30 jours). Sans abonnement.</div>
+        </div>
+        <div>
+          <button class="btn ghost btn-sm" style="width:100%" onclick="selectPlanAndScroll('À l\'acte (Document)', 19)">
+            <span data-i18n="btnChoosePlan">Choisir cette formule</span>
+          </button>
+          <div class="pricing-margin" data-i18n="plan4Margin">Paiement à l'acte · Sans abonnement</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Pricing Note -->
+    <div style="font-size:.85rem;color:var(--text-muted);line-height:1.6;margin-bottom:2.5rem" data-i18n="pricingNote">
+      Tous les prix sont affichés en Dirhams marocains (TTC, TVA 20% incluse). Accès instantané et sécurisé, résiliable à tout moment en un clic.
+    </div>
+
+    <!-- IN-PAGE SECURE MOROCCAN PAYMENT SECTION (Espace pour payer le montant) -->
+    <section class="checkout-section" id="sectionPaiement">
+      <div style="text-align:center;margin-bottom:1.8rem">
+        <span class="page-tag" data-i18n="paymentTitle">Espace de Règlement Sécurisé au Maroc</span>
+        <h2 style="font-size:1.6rem;margin-top:.4rem" data-i18n="paymentSub">Sélectionnez votre formule et réglez en toute sécurité via le CMI, par Virement Bancaire ou en Espèces.</h2>
+      </div>
+
+      <!-- Quick Plan Selection Grid -->
+      <div class="checkout-plan-selector">
+        <div class="plan-select-pill" onclick="setPaymentPlan('Bidaya (بداية)', 19, this)">
+          <b data-i18n="plan1Title">Bidaya (بداية)</b>
+          <span>19 DH / mois</span>
+        </div>
+        <div class="plan-select-pill active" onclick="setPaymentPlan('Hqi (حقي)', 49, this)">
+          <b data-i18n="plan2Title">Hqi (حقي)</b>
+          <span>49 DH / mois</span>
+        </div>
+        <div class="plan-select-pill" onclick="setPaymentPlan('Dalil Plus (دليل+)', 89, this)">
+          <b data-i18n="plan3Title">Dalil Plus (دليل+)</b>
+          <span>89 DH / mois</span>
+        </div>
+        <div class="plan-select-pill" onclick="setPaymentPlan('À l\'acte', 19, this)">
+          <b data-i18n="plan4Title">À l'acte</b>
+          <span>19 DH / doc</span>
+        </div>
+      </div>
+
+      <div class="payment-grid">
+        <!-- Form Area with Tabs -->
+        <div>
+          <div class="payment-tabs">
+            <button class="payment-tab-btn active" id="tabBtnCard" onclick="switchPayTab('card')" data-i18n="payMethodCard">Carte Bancaire CMI (3D-Secure)</button>
+            <button class="payment-tab-btn" id="tabBtnRIB" onclick="switchPayTab('rib')" data-i18n="payMethodRIB">Virement Bancaire (RIB)</button>
+            <button class="payment-tab-btn" id="tabBtnCash" onclick="switchPayTab('cash')" data-i18n="payMethodCash">Paiement Espèces (Agences)</button>
+          </div>
+
+          <!-- Method 1: Card / CMI -->
+          <div id="tabContentCard">
+            <form id="inPagePayForm" onsubmit="handleInPagePayment(event)">
+              <div class="form-group">
+                <label data-i18n="payCardholderLabel">Nom complet du porteur de la carte</label>
+                <input type="text" id="payName" class="form-input" placeholder="Ex: Karim Bennani" required>
+              </div>
+
+              <div class="form-group">
+                <label data-i18n="payCardNumLabel">Numéro de carte bancaire (16 chiffres)</label>
+                <input type="text" id="payCardNum" class="form-input" placeholder="4000 1234 5678 9010" maxlength="19" required>
+              </div>
+
+              <div style="display:grid;grid-template-columns:1fr 1fr;gap:1rem">
+                <div class="form-group">
+                  <label data-i18n="payExpiryLabel">Date d'expiration (MM/AA)</label>
+                  <input type="text" id="payExp" class="form-input" placeholder="08/28" maxlength="5" required>
+                </div>
+                <div class="form-group">
+                  <label data-i18n="payCVVLabel">Cryptogramme visuel (CVV)</label>
+                  <input type="password" id="payCVV" class="form-input" placeholder="123" maxlength="4" required>
+                </div>
+              </div>
+
+              <div class="form-group">
+                <label data-i18n="payICELabel">Identifiant ICE (Optionnel pour facture entreprise)</label>
+                <input type="text" id="payICE" class="form-input" placeholder="Ex: 002345678000045">
+              </div>
+
+              <button class="btn" style="width:100%;margin-top:.5rem" id="paySubmitBtn">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="1" y="4" width="22" height="16" rx="2" ry="2"/><line x1="1" y1="10" x2="23" y2="10"/></svg>
+                <span id="paySubmitText">Régler 49 DH TTC et Activer</span>
+              </button>
+            </form>
+          </div>
+
+          <!-- Method 2: Bank RIB Wire -->
+          <div id="tabContentRIB" style="display:none;background:var(--white);padding:1.5rem;border:1px solid var(--gold-border);border-radius:var(--radius-sm)">
+            <h4 style="color:var(--gold-d);margin-bottom:.8rem" data-i18n="payRIBTitle">Coordonnées Bancaires Officielles :</h4>
+            <div style="font-size:.92rem;line-height:1.8">
+              <b>Banque :</b> Attijariwafa Bank / Banque Populaire / BMCE<br>
+              <b>Bénéficiaire :</b> DALIL LEGAL SARL AU<br>
+              <b>RIB :</b> <code style="font-size:1rem;background:var(--paper-warm);padding:.2rem .4rem;border-radius:4px">007 780 0001234567890123 45</code><br>
+              <b>Code SWIFT/BIC :</b> BCMAMAMC<br>
+              <b>Motif à mentionner :</b> <span id="ribRefCode" style="font-weight:700;color:var(--gold-d)">DALIL-7890</span>
+            </div>
+            <p style="margin-top:1rem;font-size:.85rem;color:var(--text-muted)">Dès réception de votre virement, votre accès est activé dans un délai de 2h ouvrées avec envoi de votre reçu fiscal.</p>
+          </div>
+
+          <!-- Method 3: Cash at Partner Agencies -->
+          <div id="tabContentCash" style="display:none;background:var(--white);padding:1.5rem;border:1px solid var(--gold-border);border-radius:var(--radius-sm)">
+            <h4 style="color:var(--gold-d);margin-bottom:.8rem" data-i18n="payCashTitle">Paiement en Agence Partenaire :</h4>
+            <p style="font-size:.92rem;line-height:1.8" data-i18n="payCashText">Présentez votre numéro de référence Dalil Legal dans n'importe quelle agence Cash Plus, Wafacash ou Barid Cash à travers tout le Maroc.</p>
+            <div style="margin-top:1rem;padding:.8rem;background:var(--paper);border:1px solid var(--line);border-radius:var(--radius-sm)">
+              <b>Numéro de Paiement Agence :</b> <code style="font-size:1.1rem;color:var(--gold-d)">DL-MA-94821</code><br>
+              <small style="color:var(--text-muted)">Valable pendant 72h dans plus de 3 500 agences au Maroc.</small>
+            </div>
+          </div>
+        </div>
+
+        <!-- Summary & Security Box -->
+        <div>
+          <div style="background:var(--white);border:1px solid var(--gold-border);border-radius:var(--radius-md);padding:1.5rem;box-shadow:var(--shadow-sm)">
+            <h3 style="font-size:1.1rem;margin-bottom:1.2rem;color:var(--gold-d)" data-i18n="paySummaryTitle">Détail de la Transaction (Dirhams Marocains)</h3>
+            
+            <div style="display:flex;justify-content:space-between;margin-bottom:.6rem">
+              <span data-i18n="paySelectedPlan">Formule active :</span>
+              <b id="summaryPlanName">Hqi (حقي)</b>
+            </div>
+            <div style="display:flex;justify-content:space-between;margin-bottom:.6rem;color:var(--text-muted);font-size:.9rem">
+              <span data-i18n="payAmountHT">Montant Hors Taxe (HT) :</span>
+              <span id="summaryHT">40.83 DH</span>
+            </div>
+            <div style="display:flex;justify-content:space-between;margin-bottom:.6rem;color:var(--text-muted);font-size:.9rem">
+              <span data-i18n="payAmountTVA">TVA Marocaine (20% - Art. 89 CGI) :</span>
+              <span id="summaryTVA">8.17 DH</span>
+            </div>
+            <div style="display:flex;justify-content:space-between;border-top:1.5px solid var(--line);padding-top:.8rem;margin-top:.6rem;font-size:1.2rem;font-weight:700">
+              <span data-i18n="payAmountTTC">Total TTC à régler :</span>
+              <span style="color:var(--gold-d)" id="summaryTTC">49 DH</span>
+            </div>
+
+            <div style="margin-top:1.8rem;padding-top:1.2rem;border-top:1px dashed var(--line);display:flex;flex-direction:column;gap:.8rem;font-size:.82rem;color:var(--text-muted)">
+              <div style="display:flex;align-items:center;gap:.6rem">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#10B981" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>
+                <span data-i18n="securityBadgeCMI">Paiement Sécurisé CMI (Centre Monétique Interbancaire)</span>
+              </div>
+              <div style="display:flex;align-items:center;gap:.6rem">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#10B981" stroke-width="2.5"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+                <span data-i18n="securityBadgeCNDP">Conformité CNDP · Protection des Données (Loi 09-08)</span>
+              </div>
+              <div style="display:flex;align-items:center;gap:.6rem">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#10B981" stroke-width="2.5"><rect x="3" y="11" width="18" height="11" rx="2" ry="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg>
+                <span data-i18n="securityBadgeSSL">Chiffrement Bancaire SSL 256-bit AES</span>
+              </div>
+              <div style="display:flex;align-items:center;gap:.6rem">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#10B981" stroke-width="2.5"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/></svg>
+                <span data-i18n="securityBadgeICE">Facturation avec ICE pour Déduction Fiscale</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Bottom Security Ribbon -->
+    <div class="security-ribbon">
+      <div class="security-item">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="11" width="18" height="11" rx="2" ry="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg>
+        <span data-i18n="securityBadgeCMI">Paiement Sécurisé CMI (Centre Monétique Interbancaire)</span>
+      </div>
+      <div class="security-item">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+        <span data-i18n="securityBadgeCNDP">Conformité CNDP · Protection des Données (Loi 09-08)</span>
+      </div>
+      <div class="security-item">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"/></svg>
+        <span data-i18n="securityBadgeICE">Facturation avec ICE pour Déduction Fiscale</span>
+      </div>
+    </div>
+  </div>
+</main>
+
+<footer></footer>
+
+<script src="shared.js"></script>
+<script src="3d-effects.js"></script>
+<script>
+DalilApp.initHeader("tarifs");
+DalilApp.initFooter();
+
+let currentSelectedPlan = "Hqi (حقي)";
+let currentSelectedAmount = 49;
+
+function updateCalculations(planName, amount){
+  currentSelectedPlan = planName;
+  currentSelectedAmount = amount;
+  const tva = (amount * 0.20 / 1.20).toFixed(2);
+  const ht = (amount - tva).toFixed(2);
+
+  document.getElementById("summaryPlanName").textContent = planName;
+  document.getElementById("summaryHT").textContent = ht + " DH";
+  document.getElementById("summaryTVA").textContent = tva + " DH";
+  document.getElementById("summaryTTC").textContent = amount + " DH";
+  document.getElementById("paySubmitText").textContent = `Régler ${amount} DH TTC et Activer`;
+}
+
+function setPaymentPlan(name, price, element){
+  document.querySelectorAll(".plan-select-pill").forEach(p => p.classList.remove("active"));
+  if(element) element.classList.add("active");
+  updateCalculations(name, price);
+}
+
+function selectPlanAndScroll(name, price){
+  updateCalculations(name, price);
+  document.querySelectorAll(".plan-select-pill").forEach(p => {
+    if(p.textContent.includes(name.split(" ")[0])){
+      p.classList.add("active");
+    } else {
+      p.classList.remove("active");
+    }
+  });
+  document.getElementById("sectionPaiement").scrollIntoView({behavior: "smooth"});
+}
+
+function switchPayTab(tab){
+  document.getElementById("tabBtnCard").classList.toggle("active", tab === "card");
+  document.getElementById("tabBtnRIB").classList.toggle("active", tab === "rib");
+  document.getElementById("tabBtnCash").classList.toggle("active", tab === "cash");
+
+  document.getElementById("tabContentCard").style.display = tab === "card" ? "block" : "none";
+  document.getElementById("tabContentRIB").style.display = tab === "rib" ? "block" : "none";
+  document.getElementById("tabContentCash").style.display = tab === "cash" ? "block" : "none";
+}
+
+function handleInPagePayment(e){
+  e.preventDefault();
+  const t = DalilApp.t();
+  alert(`Paiement validé avec succès. Votre formule [${currentSelectedPlan}] est activée.`);
+  location.href = "chat.html";
+}
+</script>
+</body>
+</html>

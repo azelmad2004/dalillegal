@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html lang="fr" dir="ltr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Bibliothèque de 1 700+ Modèles d'Actes Juridiques — Dalil Legal Maroc</title>
+<link rel="icon" href="assets/favicon.png">
+<link rel="stylesheet" href="style.css">
+<style>
+.models-search-bar {
+  display: flex;
+  gap: .8rem;
+  max-width: 48rem;
+  margin: 0 auto 1.5rem;
+  background: #FFFFFF;
+  padding: .45rem;
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  box-shadow: 0 4px 15px rgba(0,0,0,0.03);
+}
+.models-search-input {
+  flex: 1;
+  border: none;
+  outline: none;
+  padding: .75rem 1rem;
+  font-size: .95rem;
+  background: transparent;
+  color: var(--text);
+}
+.models-cats {
+  display: flex;
+  gap: .5rem;
+  flex-wrap: wrap;
+  justify-content: center;
+  margin-bottom: 2.5rem;
+}
+.cat-pill {
+  padding: .4rem .9rem;
+  border-radius: 20px;
+  font-size: .8rem;
+  font-weight: 600;
+  border: 1px solid var(--border);
+  background: #FFFFFF;
+  color: var(--text-muted);
+  cursor: pointer;
+  transition: all .15s ease;
+}
+.cat-pill:hover, .cat-pill.active {
+  background: var(--gold-d);
+  color: #FFFFFF;
+  border-color: var(--gold-d);
+}
+.model-card-item {
+  background: #FFFFFF;
+  border: 1px solid var(--border);
+  border-radius: 10px;
+  padding: 1.25rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  gap: 1rem;
+  transition: all .15s ease;
+}
+.model-card-item:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(0,0,0,0.04);
+  border-color: var(--gold-d);
+}
+.badge-docx {
+  font-size: .68rem;
+  font-weight: 700;
+  padding: .2rem .5rem;
+  background: #E8F0FE;
+  color: #1967D2;
+  border-radius: 4px;
+}
+</style>
+</head>
+<body>
+<header></header>
+
+<main>
+  <div class="page-container">
+    <div style="text-align:center;margin-bottom:2.5rem">
+      <span class="page-tag">Bibliothèque Juridique Complète</span>
+      <h1>1 780+ Modèles d'Actes, Contrats & Mises en Demeure</h1>
+      <p style="color:var(--text-muted);max-width:44rem;margin:.5rem auto 0">Téléchargez des modèles authentiques conformes à la pratique procédurale et notariale marocaine, ou personnalisez-les directement avec notre IA juridique.</p>
+    </div>
+
+    <!-- Recherche en direct -->
+    <div class="models-search-bar">
+      <input type="text" id="modelSearch" class="models-search-input" placeholder="Rechercher parmi 1 780+ modèles (ex: عقد كراء، وكالة بيع، استقالة، إنذار، CV)..." oninput="debounceSearch()">
+      <button class="btn" onclick="executeSearch()">
+        <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>
+        Rechercher
+      </button>
+    </div>
+
+    <!-- Filtres par catégorie -->
+    <div class="models-cats" id="catFilters">
+      <button class="cat-pill active" onclick="filterCat('')">Tous les modèles (1 788)</button>
+      <button class="cat-pill" onclick="filterCat('contrats')">عقود وتصرفات (Contrats)</button>
+      <button class="cat-pill" onclick="filterCat('procurations')">وكالات وتفويضات (Procurations)</button>
+      <button class="cat-pill" onclick="filterCat('engagements')">التزامات وتصاريح (Engagements)</button>
+      <button class="cat-pill" onclick="filterCat('contentieux')">شكايات وإنذارات (Contentieux)</button>
+      <button class="cat-pill" onclick="filterCat('travail')">شغل ومستخدمين (Travail)</button>
+      <button class="cat-pill" onclick="filterCat('societes')">شركات وتعاونيات (Sociétés)</button>
+      <button class="cat-pill" onclick="filterCat('demandes')">طلبات إدارية (Demandes)</button>
+    </div>
+
+    <!-- Grille des résultats dynamiques -->
+    <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:1rem">
+      <span id="resultsCount" style="font-size:.85rem;color:var(--text-muted);font-weight:600">Chargement des modèles...</span>
+      <a href="chat.html" class="btn ghost btn-sm">💬 Besoin d'un acte sur-mesure ? Discutez avec l'IA</a>
+    </div>
+
+    <div class="grid-3" id="modelsGrid"></div>
+  </div>
+</main>
+
+<footer></footer>
+
+<script src="shared.js"></script>
+<script>
+DalilApp.initHeader("actes");
+DalilApp.initFooter();
+
+let currentCat = "";
+let searchTimer = null;
+
+async function loadModels(q = "", cat = "") {
+  const grid = document.getElementById("modelsGrid");
+  const countEl = document.getElementById("resultsCount");
+  grid.innerHTML = '<div style="grid-column:1/-1;text-align:center;padding:2rem;color:var(--text-muted)">Chargement des modèles marocains...</div>';
+
+  try {
+    const params = new URLSearchParams();
+    if (q) params.set("q", q);
+    if (cat) params.set("category", cat);
+    params.set("limit", "30");
+
+    const res = await fetch("/api/models/search?" + params.toString());
+    const data = await res.json();
+    const models = data.models || [];
+
+    countEl.textContent = `${data.total || models.length} modèles disponibles`;
+
+    if (!models.length) {
+      grid.innerHTML = '<div style="grid-column:1/-1;text-align:center;padding:3rem;color:var(--text-muted)">Aucun modèle trouvé. Essayez un autre terme ou décrivez votre besoin à l\'IA dans le chat.</div>';
+      return;
+    }
+
+    grid.innerHTML = models.map(m => `
+      <div class="model-card-item">
+        <div>
+          <div style="display:flex;justify-content:space-between;align-items:flex-start;gap:.5rem;margin-bottom:.6rem">
+            <span class="badge-docx">${m.extension.toUpperCase().replace(".", "")} · ${m.size_kb} KB</span>
+            <span style="font-size:.72rem;color:var(--gold-d);font-weight:600">${m.category_ar}</span>
+          </div>
+          <h4 style="font-size:.95rem;font-weight:700;color:var(--text);line-height:1.4;margin:0 0 .5rem">${escapeHtml(m.title)}</h4>
+        </div>
+        <div style="display:flex;gap:.5rem;margin-top:.5rem">
+          <a href="/api/models/download/${encodeURIComponent(m.filename)}" download class="btn btn-sm" style="flex:1;justify-content:center;gap:.35rem">
+            <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
+            Télécharger (.docx)
+          </a>
+          <a href="chat.html?prompt=${encodeURIComponent('أريد صياغة وتعديل وثيقة: ' + m.title)}" class="btn ghost btn-sm" title="Remplir avec l'IA">
+            🤖 IA
+          </a>
+        </div>
+      </div>
+    `).join("");
+
+  } catch (err) {
+    grid.innerHTML = '<div style="grid-column:1/-1;text-align:center;padding:2rem;color:#DC2626">Erreur lors de la récupération des modèles.</div>';
+  }
+}
+
+function escapeHtml(str) {
+  const div = document.createElement("div");
+  div.textContent = str;
+  return div.innerHTML;
+}
+
+function debounceSearch() {
+  clearTimeout(searchTimer);
+  searchTimer = setTimeout(() => {
+    executeSearch();
+  }, 300);
+}
+
+function executeSearch() {
+  const q = document.getElementById("modelSearch").value.trim();
+  loadModels(q, currentCat);
+}
+
+function filterCat(cat) {
+  currentCat = cat;
+  document.querySelectorAll(".cat-pill").forEach(p => p.classList.remove("active"));
+  event.target.classList.add("active");
+  const q = document.getElementById("modelSearch").value.trim();
+  loadModels(q, currentCat);
+}
+
+// Chargement initial
+loadModels();
+</script>
+</body>
+</html>

@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="fr" dir="ltr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Annuaire des Tribunaux & Juridictions — Dalil Legal Maroc</title>
+<link rel="icon" href="assets/favicon.png">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<header></header>
+
+<main>
+  <div class="page-container">
+    <div style="text-align:center;margin-bottom:3rem">
+      <span class="page-tag">Juridictions du Royaume</span>
+      <h1>Annuaire des Tribunaux & Cours du Maroc</h1>
+      <p style="color:var(--text-muted);max-width:42rem;margin:.5rem auto 0">Coordonnées, compétences matérielles et territoriales des principales juridictions de première instance, de commerce et d'appel.</p>
+    </div>
+
+    <div style="display:flex;gap:1rem;margin-bottom:2rem;flex-wrap:wrap">
+      <input type="text" id="courtSearch" class="form-input" style="max-width:340px" placeholder="Rechercher une ville (Casablanca, Rabat, Tanger...)" oninput="filterCourts()">
+    </div>
+
+    <div class="grid-2" id="courtsList"></div>
+  </div>
+</main>
+
+<footer></footer>
+
+<script src="shared.js"></script>
+<script>
+DalilApp.initHeader("tribunaux");
+DalilApp.initFooter();
+
+const courtsData = [
+  {ville:"Casablanca", name:"Tribunal de Première Instance (Civil & Social)", type:"TPI Social", addr:"Boulevard Brahim Roudani, Casablanca", comp:"Litiges prud'homaux, droit du travail, contrats civils, baux d'habitation."},
+  {ville:"Casablanca", name:"Tribunal de Commerce de Casablanca", type:"Tribunal de Commerce", addr:"Avenue Hassan II, Casablanca", comp:"Contentieux des affaires, baux commerciaux (Loi 49-16), procédures collectives, faillites."},
+  {ville:"Rabat", name:"Tribunal de Première Instance de Rabat", type:"TPI", addr:"Rue Al Qadi Iyas, Agdal, Rabat", comp:"Affaires civiles, familiales, pénales et statut personnel de la capitale."},
+  {ville:"Rabat", name:"Cour de Cassation (محكمة النقض)", type:"Juridiction Suprême", addr:"Avenue Al Nakhil, Hay Riad, Rabat", comp:"Unification de la jurisprudence nationale, pourvois en cassation en matière civile, pénale, sociale et commerciale."},
+  {ville:"Marrakech", name:"Tribunal de Première Instance de Marrakech", type:"TPI", addr:"Avenue Yacoub El Mansour, Marrakech", comp:"Litiges de la région Marrakech-Safi, droit foncier, immobilier et affaires familiales."},
+  {ville:"Tanger", name:"Tribunal de Commerce de Tanger", type:"Tribunal de Commerce", addr:"Boulevard Mohammed V, Tanger", comp:"Affaires commerciales, litiges de transport maritime, propriété industrielle et commerciale du Détroit."},
+  {ville:"Fès", name:"Tribunal de Première Instance de Fès", type:"TPI", addr:"Boulevard Allal Ben Abdellah, Fès", comp:"Contentieux civils, prud'homaux, baux locatifs et statut personnel de la région Fès-Meknès."},
+  {ville:"Agadir", name:"Tribunal de Première Instance d'Agadir", type:"TPI", addr:"Avenue Général Kettani, Agadir", comp:"Litiges du Souss-Massa, droit maritime, agricole, social et affaires de la famille."}
+];
+
+function filterCourts(){
+  const q = (document.getElementById("courtSearch")?.value || "").toLowerCase().trim();
+  const list = document.getElementById("courtsList");
+  if(!list) return;
+  const filtered = courtsData.filter(c => c.ville.toLowerCase().includes(q) || c.name.toLowerCase().includes(q) || c.comp.toLowerCase().includes(q));
+  list.innerHTML = filtered.map(c => `
+    <div class="luxury-card">
+      <div style="display:flex;justify-content:space-between;align-items:flex-start;margin-bottom:.5rem">
+        <span class="calc-badge">${c.ville} · ${c.type}</span>
+      </div>
+      <h3 style="font-size:1.15rem">${c.name}</h3>
+      <p style="font-size:.9rem;color:var(--text);margin-top:.4rem"><b>Adresse :</b> ${c.addr}</p>
+      <p style="font-size:.88rem;color:var(--text-muted);margin-top:.4rem"><b>Compétences juridictionnelles :</b> ${c.comp}</p>
+    </div>
+  `).join("");
+}
+filterCourts();
+</script>
+</body>
+</html>
+

@@ -1,0 +1,11 @@
+fastapi
+uvicorn
+httpx
+pyjwt
+bcrypt
+python-dotenv
+python-docx
+pypdf
+langchain
+langchain-community
+groq
