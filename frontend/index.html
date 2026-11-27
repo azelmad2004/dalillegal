@@ -12,11 +12,14 @@
 
 <main>
   <section class="page-hero">
-    <div style="max-width:1200px;margin:0 auto;display:grid;grid-template-columns:1.2fr .8fr;gap:3rem;align-items:center;text-align:left">
+    <div class="hero-split-grid">
       <div>
-        <div class="page-tag" data-i18n="homeHeroTag">Premier Système IA Dédié au Droit Marocain Positif</div>
-        <h1 data-i18n="homeHeroH1" style="font-size:clamp(2.3rem,4.5vw,3.6rem);line-height:1.2">Comprenez Vos Droits, Calculez Vos Indemnités.</h1>
-        <p data-i18n="homeHeroSub" style="margin:1.2rem 0 2rem;font-size:1.15rem;line-height:1.8;color:var(--text-muted)">Consultations juridiques instantanées, chiffrage exact au dirham selon le Code du Travail (Loi 65-99), baux d'habitation et commerciaux. Disponible en Darija, Arabe, Français et Anglais.</p>
+        <div class="page-tag">
+          <span class="tag-pulse-dot"></span>
+          <span data-i18n="homeHeroTag">Premier Système IA Dédié au Droit Marocain Positif</span>
+        </div>
+        <h1 data-i18n="homeHeroH1">Comprenez Vos Droits, Sécurisez Vos Démarches.</h1>
+        <p data-i18n="homeHeroSub">Consultations juridiques instantanées, analyses conformes au Code du Travail (Loi 65-99), baux d'habitation et commerciaux. Disponible en Darija, Arabe, Français et Anglais.</p>
         <div style="display:flex;gap:1rem;flex-wrap:wrap">
           <a class="btn" href="login.html" id="btnHeroChat">
             <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg>
@@ -28,102 +31,138 @@
           </a>
         </div>
       </div>
-      <!-- 3D Interactive Metallic Scales Emblem Canvas -->
-      <div style="display:flex;justify-content:center;align-items:center">
-        <div class="luxury-card" style="padding:1.5rem;width:100%;max-width:380px;text-align:center;background:linear-gradient(180deg, #FFFFFF 0%, #FAF8F5 100%)">
-          <div style="font-size:.82rem;font-weight:700;color:var(--gold-d);text-transform:uppercase;letter-spacing:.05em;margin-bottom:.5rem" data-i18n="homeEmblemTitle">Emblème 3D Interactif · Sceau de Justice</div>
-          <div id="hero3DCanvasContainer"></div>
-          <div style="font-size:.85rem;color:var(--text-muted);margin-top:.8rem" data-i18n="homeEmblemSub">Pointez votre curseur pour orienter la balance de justice</div>
-        </div>
+      <!-- iPhone Mockup Image — Aperçu Mobile Dalil Legal -->
+      <div class="hero-phone-wrap">
+        <div class="iphone-glow"></div>
+        <img src="assets/iphone.png" alt="Dalil Legal sur iPhone" class="hero-iphone-img">
       </div>
     </div>
   </section>
 
   <div class="page-container">
-    <div style="text-align:center;margin-bottom:3rem">
-      <span class="page-tag" data-i18n="homeDomainsTag">Expertise Multi-Disciplinaire</span>
-      <h2 data-i18n="homeDomainsH2">Les Domaines Juridiques Majeurs au Maroc</h2>
-      <p data-i18n="homeDomainsSub" style="color:var(--text-muted);max-width:38rem;margin:.5rem auto 0">Guides complets, textes de lois consolidés et modèles d'actes conformes aux Dahirs et jurisprudence de la Cour de Cassation.</p>
+    <div style="text-align:center;margin-bottom:3.5rem">
+      <span class="page-tag">
+        <span class="tag-pulse-dot"></span>
+        <span data-i18n="homeDomainsTag">Expertise Multi-Disciplinaire</span>
+      </span>
+      <h2 data-i18n="homeDomainsH2" style="font-size:clamp(1.9rem,3.4vw,2.8rem)">Les Domaines Juridiques Majeurs au Maroc</h2>
+      <p data-i18n="homeDomainsSub" style="color:var(--text-muted);max-width:40rem;margin:.7rem auto 0;font-size:1.05rem">Guides complets, textes de lois consolidés et modèles d'actes conformes aux Dahirs et jurisprudence de la Cour de Cassation.</p>
     </div>
 
-    <div class="grid-3" style="margin-bottom:4rem">
+    <div class="grid-3" style="margin-bottom:4.5rem">
       <div class="luxury-card">
-        <div class="card-icon">
-          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="7" width="20" height="14" rx="2" ry="2"/><path d="M16 21V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v16"/></svg>
+        <div class="card-top-row">
+          <div class="card-icon">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="7" width="20" height="14" rx="2" ry="2"/><path d="M16 21V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v16"/></svg>
+          </div>
+          <span class="card-badge-pill">Loi 65-99</span>
         </div>
         <h3 data-i18n="cardWorkTitle">Droit du Travail (Loi 65-99)</h3>
         <p data-i18n="cardWorkDesc">Licenciement abusif, indemnités de préavis (Art. 43), barème légal d'ancienneté (Art. 53), procédure d'écoute préalable (Art. 62) et conciliation devant l'Inspecteur du Travail.</p>
-        <a href="droit-travail.html" style="display:inline-block;margin-top:1rem;color:var(--gold-d);font-weight:600" data-i18n="cardLinkMore">Consulter le guide complet →</a>
+        <a href="droit-travail.html" class="card-cta-link">
+          <span data-i18n="cardLinkMore">Consulter le guide complet</span>
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14"/><path d="M12 5l7 7-7 7"/></svg>
+        </a>
       </div>
 
       <div class="luxury-card">
-        <div class="card-icon">
-          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg>
+        <div class="card-top-row">
+          <div class="card-icon">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg>
+          </div>
+          <span class="card-badge-pill">Loi 67-12</span>
         </div>
         <h3 data-i18n="cardRentTitle">Baux d'Habitation (Loi 67-12)</h3>
         <p data-i18n="cardRentDesc">Contrat écrit obligatoire, caution plafonnée à 2 mois (Art. 7), révision triennale à 8% (Art. 31), mise en demeure pour impayés de 15 jours et procédure d'expulsion.</p>
-        <a href="baux-habitation.html" style="display:inline-block;margin-top:1rem;color:var(--gold-d);font-weight:600" data-i18n="cardLinkMore">Consulter le guide complet →</a>
+        <a href="baux-habitation.html" class="card-cta-link">
+          <span data-i18n="cardLinkMore">Consulter le guide complet</span>
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14"/><path d="M12 5l7 7-7 7"/></svg>
+        </a>
       </div>
 
       <div class="luxury-card">
-        <div class="card-icon">
-          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 2L3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4z"/><line x1="3" y1="6" x2="21" y2="6"/><path d="M16 10a4 4 0 0 1-8 0"/></svg>
+        <div class="card-top-row">
+          <div class="card-icon">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 2L3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4z"/><line x1="3" y1="6" x2="21" y2="6"/><path d="M16 10a4 4 0 0 1-8 0"/></svg>
+          </div>
+          <span class="card-badge-pill">Loi 49-16</span>
         </div>
         <h3 data-i18n="cardCommTitle">Baux Commerciaux (Loi 49-16)</h3>
         <p data-i18n="cardCommDesc">Propriété commerciale après 2 ans de bail écrit, indemnité d'éviction égale à la valeur du fonds (Art. 7), révision à 10% et conditions d'expulsion sans indemnité.</p>
-        <a href="baux-commerciaux.html" style="display:inline-block;margin-top:1rem;color:var(--gold-d);font-weight:600" data-i18n="cardLinkMore">Consulter le guide complet →</a>
+        <a href="baux-commerciaux.html" class="card-cta-link">
+          <span data-i18n="cardLinkMore">Consulter le guide complet</span>
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14"/><path d="M12 5l7 7-7 7"/></svg>
+        </a>
       </div>
 
       <div class="luxury-card">
-        <div class="card-icon">
-          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>
+        <div class="card-top-row">
+          <div class="card-icon">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>
+          </div>
+          <span class="card-badge-pill">Loi 70-03</span>
         </div>
         <h3 data-i18n="cardFamilyTitle">Droit de la Famille (Moudawana)</h3>
         <p data-i18n="cardFamilyDesc">Divorce pour discorde (Talaq Chiqaq - Art. 94-97), pension alimentaire (Nafâqa - Art. 187), garde des enfants (Hadana) et liquidation des droits financiers (Mout'â).</p>
-        <a href="droit-famille.html" style="display:inline-block;margin-top:1rem;color:var(--gold-d);font-weight:600" data-i18n="cardLinkMore">Consulter le guide complet →</a>
+        <a href="droit-famille.html" class="card-cta-link">
+          <span data-i18n="cardLinkMore">Consulter le guide complet</span>
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14"/><path d="M12 5l7 7-7 7"/></svg>
+        </a>
       </div>
 
       <div class="luxury-card">
-        <div class="card-icon">
-          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polygon points="12 2 2 7 12 12 22 7 12 2"/><polyline points="2 17 12 22 22 17"/><polyline points="2 12 12 17 22 12"/></svg>
+        <div class="card-top-row">
+          <div class="card-icon">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polygon points="12 2 2 7 12 12 22 7 12 2"/><polyline points="2 17 12 22 22 17"/><polyline points="2 12 12 17 22 12"/></svg>
+          </div>
+          <span class="card-badge-pill">Lois 17-95/5-96</span>
         </div>
         <h3 data-i18n="cardCompTitle">Création de Sociétés (Lois 17-95/5-96)</h3>
         <p data-i18n="cardCompDesc">SARL sans capital minimum requis (Loi 21-05), SARL-AU, statuts, certificat négatif OMPIC, approbation des comptes annuels et cession de parts sociales (Art. 56).</p>
-        <a href="droit-societes.html" style="display:inline-block;margin-top:1rem;color:var(--gold-d);font-weight:600" data-i18n="cardLinkMore">Consulter le guide complet →</a>
+        <a href="droit-societes.html" class="card-cta-link">
+          <span data-i18n="cardLinkMore">Consulter le guide complet</span>
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14"/><path d="M12 5l7 7-7 7"/></svg>
+        </a>
       </div>
 
       <div class="luxury-card">
-        <div class="card-icon">
-          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/></svg>
+        <div class="card-top-row">
+          <div class="card-icon">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/></svg>
+          </div>
+          <span class="card-badge-pill">1 788 Modèles</span>
         </div>
         <h3 data-i18n="cardDocsTitle">Générateur d'Actes & Mises en Demeure</h3>
         <p data-i18n="cardDocsDesc">Modèles officiels téléchargeables : mise en demeure d'impayés, contrat de bail type, convocation d'écoute préalable et reçu pour solde de tout compte.</p>
-        <a href="modeles-actes.html" style="display:inline-block;margin-top:1rem;color:var(--gold-d);font-weight:600" data-i18n="cardLinkDocs">Accéder aux modèles →</a>
+        <a href="modeles-actes.html" class="card-cta-link">
+          <span data-i18n="cardLinkDocs">Accéder aux modèles</span>
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14"/><path d="M12 5l7 7-7 7"/></svg>
+        </a>
       </div>
     </div>
 
-    <!-- Section Chiffres Clés -->
-    <div style="background:var(--paper);border:1px solid var(--gold-border);border-radius:var(--radius-lg);padding:3rem 2rem;margin-bottom:4rem">
+    <!-- Section Chiffres Clés Bento Style Forlik -->
+    <div class="bento-stats-box">
       <div class="grid-4" style="text-align:center">
         <div>
-          <div style="font-family:'Cinzel',serif;font-size:2.4rem;font-weight:800;color:var(--gold-d)" data-i18n="homeStat1Val">100%</div>
-          <div style="font-weight:600;margin-top:.3rem" data-i18n="homeStat1Title">Droit Positif Marocain</div>
-          <p style="font-size:.85rem;color:var(--text-muted);margin-top:.2rem" data-i18n="homeStat1Desc">Citations strictes du Bulletin Officiel</p>
+          <div class="bento-stat-num" data-i18n="homeStat1Val">100%</div>
+          <div style="font-weight:700;margin-top:.5rem;font-size:1.02rem" data-i18n="homeStat1Title">Droit Positif Marocain</div>
+          <p style="font-size:.88rem;color:var(--text-muted);margin-top:.25rem" data-i18n="homeStat1Desc">Citations strictes du Bulletin Officiel</p>
         </div>
         <div>
-          <div style="font-family:'Cinzel',serif;font-size:2.4rem;font-weight:800;color:var(--gold-d)" data-i18n="homeStat2Val">4 Langues</div>
-          <div style="font-weight:600;margin-top:.3rem" data-i18n="homeStat2Title">Darija, Arabe, Français, En</div>
-          <p style="font-size:.85rem;color:var(--text-muted);margin-top:.2rem" data-i18n="homeStat2Desc">Alphabet arabe ou Arabizi (3/7/9)</p>
+          <div class="bento-stat-num" data-i18n="homeStat2Val">4 Langues</div>
+          <div style="font-weight:700;margin-top:.5rem;font-size:1.02rem" data-i18n="homeStat2Title">Darija, Arabe, Français, En</div>
+          <p style="font-size:.88rem;color:var(--text-muted);margin-top:.25rem" data-i18n="homeStat2Desc">Alphabet arabe ou Arabizi (3/7/9)</p>
         </div>
         <div>
-          <div style="font-family:'Cinzel',serif;font-size:2.4rem;font-weight:800;color:var(--gold-d)" data-i18n="homeStat3Val">Gratuit</div>
-          <div style="font-weight:600;margin-top:.3rem" data-i18n="homeStat3Title">Modèles & Guides</div>
-          <p style="font-size:.85rem;color:var(--text-muted);margin-top:.2rem" data-i18n="homeStat3Desc">Accès immédiat et consultation libre</p>
+          <div class="bento-stat-num" data-i18n="homeStat3Val">Gratuit</div>
+          <div style="font-weight:700;margin-top:.5rem;font-size:1.02rem" data-i18n="homeStat3Title">Modèles & Guides</div>
+          <p style="font-size:.88rem;color:var(--text-muted);margin-top:.25rem" data-i18n="homeStat3Desc">Accès immédiat et consultation libre</p>
         </div>
         <div>
-          <div style="font-family:'Cinzel',serif;font-size:2.4rem;font-weight:800;color:var(--gold-d)" data-i18n="homeStat4Val">120B</div>
-          <div style="font-weight:600;margin-top:.3rem" data-i18n="homeStat4Title">Modèle IA Spécialisé</div>
-          <p style="font-size:.85rem;color:var(--text-muted);margin-top:.2rem" data-i18n="homeStat4Desc">Raisonnement juridique de haut niveau</p>
+          <div class="bento-stat-num" data-i18n="homeStat4Val">120B</div>
+          <div style="font-weight:700;margin-top:.5rem;font-size:1.02rem" data-i18n="homeStat4Title">Modèle IA Spécialisé</div>
+          <p style="font-size:.88rem;color:var(--text-muted);margin-top:.25rem" data-i18n="homeStat4Desc">Raisonnement juridique de haut niveau</p>
         </div>
       </div>
     </div>
@@ -133,7 +172,6 @@
 <footer></footer>
 
 <script src="shared.js"></script>
-<script src="3d-effects.js"></script>
 <script>
 DalilApp.initHeader("home");
 DalilApp.initFooter();
@@ -142,10 +180,6 @@ DalilApp.initFooter();
 const chatBtn = document.getElementById("btnHeroChat");
 if (chatBtn) {
   chatBtn.href = DalilApp.getUser() ? "chat.html" : "login.html";
-}
-
-if (window.Dalil3D && window.Dalil3D.createScalesCanvas) {
-  window.Dalil3D.createScalesCanvas("hero3DCanvasContainer");
 }
 </script>
 </body>

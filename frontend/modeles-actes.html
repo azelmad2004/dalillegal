@@ -9,70 +9,108 @@
 <style>
 .models-search-bar {
   display: flex;
+  align-items: center;
   gap: .8rem;
-  max-width: 48rem;
-  margin: 0 auto 1.5rem;
+  max-width: 52rem;
+  margin: 0 auto 1.8rem;
   background: #FFFFFF;
-  padding: .45rem;
-  border: 1px solid var(--border);
-  border-radius: 12px;
-  box-shadow: 0 4px 15px rgba(0,0,0,0.03);
+  padding: .5rem .6rem .5rem 1.4rem;
+  border: 1px solid var(--gold-border);
+  border-radius: var(--radius-pill);
+  box-shadow: 0 10px 30px -10px rgba(15, 23, 42, 0.08), 0 0 0 1px rgba(200, 164, 92, 0.12);
+  transition: all .25s var(--ease-forlik);
+}
+.models-search-bar:focus-within {
+  border-color: var(--gold);
+  box-shadow: 0 14px 35px -10px rgba(200, 164, 92, 0.25), 0 0 0 3px var(--gold-badge);
 }
 .models-search-input {
   flex: 1;
   border: none;
   outline: none;
-  padding: .75rem 1rem;
-  font-size: .95rem;
+  padding: .75rem .5rem;
+  font-size: .96rem;
   background: transparent;
   color: var(--text);
 }
 .models-cats {
   display: flex;
-  gap: .5rem;
+  gap: .6rem;
   flex-wrap: wrap;
   justify-content: center;
-  margin-bottom: 2.5rem;
+  margin-bottom: 2.8rem;
 }
 .cat-pill {
-  padding: .4rem .9rem;
-  border-radius: 20px;
-  font-size: .8rem;
-  font-weight: 600;
-  border: 1px solid var(--border);
+  padding: .45rem 1.15rem;
+  border-radius: var(--radius-pill);
+  font-size: .84rem;
+  font-weight: 700;
+  border: 1px solid var(--gold-border);
   background: #FFFFFF;
   color: var(--text-muted);
   cursor: pointer;
-  transition: all .15s ease;
+  transition: all .25s var(--ease-forlik);
+  box-shadow: var(--shadow-sm);
 }
 .cat-pill:hover, .cat-pill.active {
-  background: var(--gold-d);
+  background: var(--gold-light);
+  border-color: var(--gold);
+  color: var(--gold-d);
+  transform: translateY(-2px);
+  box-shadow: 0 8px 18px -6px rgba(200, 164, 92, 0.3);
+}
+.cat-pill.active {
+  background: var(--gold);
   color: #FFFFFF;
-  border-color: var(--gold-d);
 }
 .model-card-item {
   background: #FFFFFF;
-  border: 1px solid var(--border);
-  border-radius: 10px;
-  padding: 1.25rem;
+  border: 1px solid rgba(200, 164, 92, 0.22);
+  border-radius: var(--radius-lg);
+  padding: 1.6rem;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-  gap: 1rem;
-  transition: all .15s ease;
+  gap: 1.1rem;
+  transition: all .3s var(--ease-forlik);
+  box-shadow: 0 8px 24px -10px rgba(15, 23, 42, 0.05);
 }
 .model-card-item:hover {
-  transform: translateY(-2px);
-  box-shadow: 0 6px 20px rgba(0,0,0,0.04);
-  border-color: var(--gold-d);
+  transform: translateY(-5px);
+  box-shadow: 0 20px 40px -12px rgba(200, 164, 92, 0.25);
+  border-color: var(--gold);
 }
 .badge-docx {
-  font-size: .68rem;
+  font-size: .72rem;
   font-weight: 700;
-  padding: .2rem .5rem;
-  background: #E8F0FE;
-  color: #1967D2;
-  border-radius: 4px;
+  padding: .25rem .65rem;
+  background: var(--gold-badge);
+  color: var(--gold-d);
+  border: 1px solid var(--gold-border);
+  border-radius: var(--radius-pill);
+}
+@media (max-width: 600px) {
+  .models-search-bar {
+    padding: .35rem .4rem .35rem .9rem;
+    gap: .4rem;
+  }
+  .models-search-bar .btn {
+    padding: .55rem .9rem;
+    font-size: .82rem;
+    min-height: auto;
+  }
+  .models-cats {
+    flex-wrap: nowrap;
+    overflow-x: auto;
+    justify-content: flex-start;
+    padding-bottom: .5rem;
+    margin-bottom: 1.8rem;
+    -webkit-overflow-scrolling: touch;
+  }
+  .cat-pill {
+    white-space: nowrap;
+    flex-shrink: 0;
+  }
 }
 </style>
 </head>
@@ -82,14 +120,17 @@
 <main>
   <div class="page-container">
     <div style="text-align:center;margin-bottom:2.5rem">
-      <span class="page-tag">Bibliothèque Juridique Complète</span>
-      <h1>1 780+ Modèles d'Actes, Contrats & Mises en Demeure</h1>
+      <span class="page-tag">
+        <span class="tag-pulse-dot"></span>
+        <span>Bibliothèque Juridique Complète</span>
+      </span>
+      <h1>1 788 Modèles d'Actes, Contrats & Mises en Demeure</h1>
       <p style="color:var(--text-muted);max-width:44rem;margin:.5rem auto 0">Téléchargez des modèles authentiques conformes à la pratique procédurale et notariale marocaine, ou personnalisez-les directement avec notre IA juridique.</p>
     </div>
 
     <!-- Recherche en direct -->
     <div class="models-search-bar">
-      <input type="text" id="modelSearch" class="models-search-input" placeholder="Rechercher parmi 1 780+ modèles (ex: عقد كراء، وكالة بيع، استقالة، إنذار، CV)..." oninput="debounceSearch()">
+      <input type="text" id="modelSearch" class="models-search-input" placeholder="Rechercher parmi 1 788 modèles (ex: عقد كراء، وكالة بيع، استقالة، إنذار، CV)..." oninput="debounceSearch()">
       <button class="btn" onclick="executeSearch()">
         <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>
         Rechercher

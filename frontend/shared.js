@@ -48,8 +48,8 @@ const DalilI18N = {
     cardCompDesc: "SARL sans capital minimum requis (Loi 21-05), SARL-AU, statuts, certificat négatif OMPIC, approbation des comptes annuels et cession de parts sociales (Art. 56).",
     cardDocsTitle: "Générateur d'Actes & Mises en Demeure",
     cardDocsDesc: "Modèles officiels téléchargeables : mise en demeure d'impayés, contrat de bail type, convocation d'écoute préalable et reçu pour solde de tout compte.",
-    cardLinkMore: "Consulter le guide complet →",
-    cardLinkDocs: "Accéder aux modèles →",
+    cardLinkMore: "Consulter le guide complet",
+    cardLinkDocs: "Accéder aux modèles",
 
     // Home Stats
     homeStat1Val: "100%",
@@ -97,9 +97,9 @@ const DalilI18N = {
     // Payment Section & Modal
     paymentTitle: "Espace de Règlement Sécurisé au Maroc",
     paymentSub: "Sélectionnez votre formule et réglez en toute sécurité via le CMI, par Virement Bancaire ou en Espèces.",
-    payMethodCard: "Carte Bancaire Marocaine ou Internationale (CMI 3D-Secure)",
-    payMethodRIB: "Virement Bancaire Direct (RIB Marocain)",
-    payMethodCash: "Règlement Espèces en Agence (Cash Plus / Wafacash)",
+    payMethodCard: "Carte Bancaire (CMI)",
+    payMethodRIB: "Virement Bancaire (RIB)",
+    payMethodCash: "Espèces en Agence",
     paySummaryTitle: "Détail de la Transaction (Dirhams Marocains)",
     paySelectedPlan: "Formule active :",
     payAmountHT: "Montant Hors Taxe (HT) :",
@@ -217,8 +217,8 @@ const DalilI18N = {
     cardCompDesc: "شركة SARL بلا رأس مال أدنى (قانون 21-05)، الشركاء، الشهادة السلبية من OMPIC، وتفويت الحصص والمصادقة على الحسابات.",
     cardDocsTitle: "نماذج العقود والإنذارات الرسمية",
     cardDocsDesc: "نماذج قانونية واجدة للتحميل : إنذار بأداء الكراء، عقد كراء سكني نموذجي، استدعاء لجلسة الاستماع، وتوصيل تصفية كل حساب.",
-    cardLinkMore: "قراءة الدليل الكامل ←",
-    cardLinkDocs: "تحميل النماذج القانونية ←",
+    cardLinkMore: "قراءة الدليل الكامل",
+    cardLinkDocs: "تحميل النماذج القانونية",
 
     // Home Stats
     homeStat1Val: "100%",
@@ -266,9 +266,9 @@ const DalilI18N = {
     // Payment Section
     paymentTitle: "فضاء الأداء الآمن بالمغرب",
     paymentSub: "عزل الباقة اللي بغيتي وخلص بأمان عبر البطاقة البنكية المغربية CMI، التحويل البنكي أو فالوكالات.",
-    payMethodCard: "بطاقة بنكية مغربية أو دولية (CMI 3D-Secure)",
-    payMethodRIB: "تحويل بنكي مباشر (RIB مغربي)",
-    payMethodCash: "أداء نقدي فالوكالات (Cash Plus / Wafacash)",
+    payMethodCard: "بطاقة بنكية (CMI)",
+    payMethodRIB: "تحويل بنكي (RIB)",
+    payMethodCash: "أداء نقدي فالوكالة",
     paySummaryTitle: "تفاصيل العملية (بالدرهم المغربي)",
     paySelectedPlan: "الباقة المختارة :",
     payAmountHT: "المبلغ دون احتساب الضريبة (HT) :",
@@ -386,8 +386,8 @@ const DalilI18N = {
     cardCompDesc: "شركة المسؤولية المحدودة SARL دون حد أدنى لرأس المال (قانون 21-05)، والشهادة السلبية والمصادقة على الحسابات السنوية.",
     cardDocsTitle: "محررات ونماذج إنذارات رسمية",
     cardDocsDesc: "صيغ قانونية رسمية جاهزة للتحميل : إنذارات بأداء الكراء، عقود كراء نموذجية، استدعاءات لجلسات الاستماع، ومخالصات نهائية.",
-    cardLinkMore: "الاطلاع على الدليل الشامل ←",
-    cardLinkDocs: "تحميل النماذج القانونية ←",
+    cardLinkMore: "الاطلاع على الدليل الشامل",
+    cardLinkDocs: "تحميل النماذج القانونية",
 
     // Home Stats
     homeStat1Val: "100%",
@@ -429,16 +429,15 @@ const DalilI18N = {
     plan4Desc: "39 درهماً للملف الظرفي (صلاحية 30 يوماً). دون التزام اشتراك.",
     plan4Margin: "دفع حسب الخدمة · بدون اشتراك",
     pricingNote: "جميع الأسعار بالدرهم المغربي شاملة للضريبة على القيمة المضافة (TTC). وصول فوري وآمن، وإمكانية الإلغاء في أي وقت.",
-    pricingNote: "السعر باحتساب الرسوم TTC : من أصل 49 درهماً، يُحوّل ما يناهز 8 دراهم للضريبة على القيمة المضافة (20%) لفائدة الدولة. كافة الباقات أقل تكلفة من الحلول المدفوعة المعتادة (180 إلى 200 درهم شهرياً).",
     btnChoosePlan: "اختيار هذه الباقة",
     btnPayNow: "إتمام الأداء الآمن",
 
     // Payment Section
     paymentTitle: "منظومة الأداء الرقمي الآمن بالمغرب",
     paymentSub: "حدد الباقة المناسبة وسدد بأمان تام عبر بطاقتك البنكية، أو بالتحويل المصرفي المباشر، أو نقداً.",
-    payMethodCard: "بطاقة بنكية مغربية أو دولية (CMI 3D-Secure)",
-    payMethodRIB: "تحويل مصرفي مباشر (RIB مغربي معتمد)",
-    payMethodCash: "سداد نقدي في الوكالات المعتمدة (كاش بلوس / وفاكاش)",
+    payMethodCard: "بطاقة بنكية (CMI)",
+    payMethodRIB: "تحويل بنكي (RIB)",
+    payMethodCash: "دفع نقدي بالوكالة",
     paySummaryTitle: "تفاصيل المعاملة المالية (بالدرهم المغربي)",
     paySelectedPlan: "الباقة المختارة :",
     payAmountHT: "المبلغ الصافي الخاضع للضريبة (HT) :",
@@ -556,8 +555,8 @@ const DalilI18N = {
     cardCompDesc: "SARL with no minimum statutory capital (Act 21-05), sole proprietorship SARL-AU, OMPIC trade name clearance, and annual accounts approval.",
     cardDocsTitle: "Formal Notice & Contract Generator",
     cardDocsDesc: "Downloadable court-compliant templates: rent arrears formal notice, standard residential tenancy, hearing summons, and full severance release.",
-    cardLinkMore: "Read full guide →",
-    cardLinkDocs: "Access templates →",
+    cardLinkMore: "Read full guide",
+    cardLinkDocs: "Access templates",
 
     // Home Stats
     homeStat1Val: "100%",
@@ -605,9 +604,9 @@ const DalilI18N = {
     // Payment Section
     paymentTitle: "Certified Moroccan Secure Payment Portal",
     paymentSub: "Choose your formula and settle securely via CMI credit card, direct bank transfer, or cash at partner branches.",
-    payMethodCard: "Moroccan or International Credit Card (CMI 3D-Secure)",
-    payMethodRIB: "Direct Bank Wire (Moroccan RIB)",
-    payMethodCash: "Cash Payment at Agency (Cash Plus / Wafacash)",
+    payMethodCard: "Bank Card (CMI)",
+    payMethodRIB: "Bank Wire (RIB)",
+    payMethodCash: "Cash at Agency",
     paySummaryTitle: "Transaction Breakdown (Moroccan Dirham MAD)",
     paySelectedPlan: "Selected Package:",
     payAmountHT: "Pre-tax Subtotal (HT):",
@@ -780,6 +779,26 @@ const DalilApp = {
 
           <a class="nav-link ${activePage === 'tarifs' ? 'active' : ''}" href="tarifs.html" data-i18n="navTarifs">${t.navTarifs}</a>
           <a class="nav-link ${activePage === 'apropos' ? 'active' : ''}" href="a-propos.html" data-i18n="navApropos">${t.navApropos}</a>
+
+          <div class="mobile-nav-extras">
+            <select class="lang-select" id="mobileLangSelect" aria-label="Langue">
+              <option value="fr" ${lang === 'fr' ? 'selected' : ''}>Français</option>
+              <option value="ary" ${lang === 'ary' ? 'selected' : ''}>الدارجة المغربية</option>
+              <option value="ar" ${lang === 'ar' ? 'selected' : ''}>العربية الفصحى</option>
+              <option value="en" ${lang === 'en' ? 'selected' : ''}>English</option>
+            </select>
+            <div class="mobile-auth-row">
+              ${user ? `
+                <a class="btn btn-sm" href="chat.html" style="background:var(--gold-gradient);color:#fff;flex:1;justify-content:center">
+                  <span data-i18n="navChat">${t.navChat}</span>
+                </a>
+                <button class="btn btn-sm ghost" style="flex:1;justify-content:center" onclick="DalilApp.logout()">${t.logout}</button>
+              ` : `
+                <a class="btn btn-sm ghost" style="flex:1;justify-content:center" href="login.html" data-i18n="login">${t.login}</a>
+                <a class="btn btn-sm" style="flex:1;justify-content:center" href="register.html" data-i18n="register">${t.register}</a>
+              `}
+            </div>
+          </div>
         </nav>
 
         <div class="header-actions">
@@ -811,6 +830,12 @@ const DalilApp = {
     document.getElementById("globalLangSelect").onchange = (e) => {
       this.setLang(e.target.value);
     };
+    const mobileLang = document.getElementById("mobileLangSelect");
+    if (mobileLang) {
+      mobileLang.onchange = (e) => {
+        this.setLang(e.target.value);
+      };
+    }
 
     this.translatePage();
   },

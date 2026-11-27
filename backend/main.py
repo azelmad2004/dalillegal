@@ -39,7 +39,8 @@ DB = _resoudre_chemin_db()
 
 # LLM compatible OpenAI : Groq 120B par défaut
 LLM_URL = os.getenv("LLM_BASE_URL", "https://api.groq.com/openai/v1/chat/completions")
-LLM_KEY = os.getenv("LLM_API_KEY") or os.getenv("GROQ_API_KEY")LLM_MODEL = os.getenv("LLM_MODEL", os.getenv("GROQ_MODEL", "openai/gpt-oss-120b"))
+LLM_KEY = os.getenv("LLM_API_KEY") or os.getenv("GROQ_API_KEY")
+LLM_MODEL = os.getenv("LLM_MODEL", os.getenv("GROQ_MODEL", "openai/gpt-oss-120b"))
 
 USER_AGENT = "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36"
 
